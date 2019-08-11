@@ -36,10 +36,14 @@
       // 判断用户是否输入邮箱地址
       if (email.trim().length == 0) {
         alert('请输入邮箱地址');
+        // 阻止程序继续运行下去
+        return;
       };
       // 判断用户是否输入密码
       if (password.trim().length == 0) {
         alert('请输入密码');
+        // 阻止程序继续运行下去
+        return;
       };
       // 如果都验证通过 向服务器发送请求
       $.ajax({
