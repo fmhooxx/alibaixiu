@@ -1,3 +1,11 @@
+<!-- 代码需要从上到下解析 -->
+<!-- ajax 天生异步 所以不能使用 ajax 因为会造成页面的闪烁 -->
+<!-- script 的 src 属性既可以发送跨域 也可以发送 ajax 并且是同步的 -->
+<!-- 所以这里使用 script src 发送 ajax 请求 -->
+<script src="/login/status"></script>
+<script>
+  if (!isLogin) location.href = 'login.html';
+</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
