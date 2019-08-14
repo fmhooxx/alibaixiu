@@ -30,4 +30,21 @@ $('#feature').on('change', function () {
       $('#thumbnail').val(data[0].cover);
     }
   })
+});
+
+// 当添加文章表单提交的时候
+$('#addForm').on('submit', function () {
+  // 获取管理员在表单中输入的内容
+  var formData = $(this).serialize();
+  // 向服务器端发送请求 实现添加文章的功能
+  $.ajax({
+    url: '/posts',
+    type: 'post',
+    data: formData,
+    success: function (data) {
+      console.log(data);
+    }
+  })
+  // 阻止表单默认的提交行为
+  return false;
 })
