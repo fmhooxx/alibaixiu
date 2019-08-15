@@ -13,4 +13,15 @@ $('#logout').on('click', function () {
       }
     })
   }
+});
+
+// 想服务器端发送请求 获取用户登录信息
+$.ajax({
+  url: '/users/' + userId,
+  type: 'get',
+  success: function (data) {
+    // console.log(data);
+    $('.avatar').attr('src', data.avatar);
+    $('.profile .name').html(data.nickName)
+  }
 })
